@@ -12,7 +12,7 @@ function is_git()
 
 if [ "$(is_git)" == ".git" ];
 then
-	git branch | grep \* | awk '{print $2}'
+	git branch | grep \* | awk '{print "("$2")"}'
 else
 	:
 fi
