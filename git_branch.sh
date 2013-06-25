@@ -7,7 +7,7 @@ function is_git()
 
 if [ $(is_git) ];
 then
-	git branch | grep \* | awk '{print "("$2")"}'
+	echo "($(git rev-parse --abbrev-ref HEAD))"
 else
 	:
 fi
