@@ -1,6 +1,6 @@
 UNPUSHED_COMMIT_NO=0
-GIT_BRANCH=$(git rev-parse --git-dir 2>/dev/null)
-if [ "$GIT_BRANCH" == ".git" ]
+git rev-parse --git-dir >/dev/null 2>&1
+if [ "$?" -eq 0 ]
 then
 	UNPUSHED_COMMIT_NO=$(git log @{u}.. --pretty=oneline 2>/dev/null| wc -l)
 fi
